@@ -7,32 +7,32 @@ const Growth = ({ chapter, title, subtitle, description, images }) => {
     const y2 = useTransform(scrollYProgress, [0.6, 0.9], [0, 100]);
 
     return (
-        <section className="py-24 max-w-7xl mx-auto px-6 overflow-hidden bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+        <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 overflow-hidden bg-white">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
                 <div className="lg:col-span-5 order-2 lg:order-1">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className="space-y-10"
+                        className="space-y-6 md:space-y-10"
                     >
-                        <span className="text-secondary font-accent font-bold uppercase tracking-[0.4em] text-xs block">
+                        <span className="text-secondary font-accent font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs block">
                             {chapter}
                         </span>
-                        <h2 className="text-6xl md:text-8xl font-accent font-black text-gray-900 leading-none tracking-tighter">
+                        <h2 className="text-4xl md:text-8xl font-accent font-black text-gray-900 leading-[1.1] md:leading-none tracking-tighter">
                             {title}
                         </h2>
-                        <div className="w-24 h-2 bg-primary/20"></div>
-                        <p className="text-2xl text-gray-400 font-light italic">
+                        <div className="w-16 md:w-24 h-1.5 md:h-2 bg-primary/20"></div>
+                        <p className="text-lg md:text-2xl text-gray-400 font-light italic">
                             "{subtitle}"
                         </p>
-                        <p className="text-gray-600 text-xl font-light leading-relaxed">
+                        <p className="text-gray-600 text-base md:text-xl font-light leading-relaxed">
                             {description}
                         </p>
-                        <div className="pt-6 flex flex-wrap gap-4">
+                        <div className="pt-4 md:pt-6 flex flex-wrap gap-2 md:gap-4">
                             {['Java', 'Consistency', 'Discipline'].map(tag => (
-                                <span key={tag} className="bg-gray-50 border border-gray-100 px-8 py-3 rounded-full text-gray-500 text-sm font-bold uppercase tracking-widest shadow-sm">
+                                <span key={tag} className="bg-gray-50 border border-gray-100 px-4 md:px-8 py-2 md:py-3 rounded-full text-gray-500 text-[10px] md:text-sm font-bold uppercase tracking-widest shadow-sm">
                                     {tag}
                                 </span>
                             ))}
@@ -40,25 +40,26 @@ const Growth = ({ chapter, title, subtitle, description, images }) => {
                     </motion.div>
                 </div>
 
-                <div className="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-10 relative">
+                <div className="lg:col-span-7 order-1 lg:order-2 grid grid-cols-2 gap-4 md:gap-10 relative">
                     <motion.div
                         style={{ y: y1 }}
-                        className="mt-20 rounded-[4rem] overflow-hidden shadow-2xl border border-gray-100"
+                        className="mt-10 md:mt-20 rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl border border-gray-100"
                     >
-                        <img src={images[0]} alt="Growth Phase" className="w-full h-[600px] object-cover" />
+                        <img src={images[0]} alt="Growth Phase" className="w-full h-64 md:h-[600px] object-cover" />
                     </motion.div>
                     <motion.div
                         style={{ y: y2 }}
-                        className="rounded-[4rem] overflow-hidden shadow-2xl border border-gray-100"
+                        className="rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl border border-gray-100"
                     >
-                        <img src="/assets/new_event2.jpg" alt="Project Building" className="w-full h-[600px] object-cover" />
+                        <img src="/assets/new_event2.jpg" alt="Project Building" className="w-full h-64 md:h-[600px] object-cover" />
                     </motion.div>
 
                     {/* Decorative subtle element */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/5 blur-[100px] rounded-full z-[-1]"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 md:w-64 h-32 md:h-64 bg-primary/5 blur-[50px] md:blur-[100px] rounded-full z-[-1]"></div>
                 </div>
             </div>
         </section>
+
     );
 };
 

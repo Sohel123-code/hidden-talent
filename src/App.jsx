@@ -51,11 +51,13 @@ const App = () => {
             />
 
             <footer className="py-20 text-center bg-gray-50 border-t border-gray-100">
-                <p className="text-gray-400 text-sm font-light">
+                <p className="text-gray-900 text-2xl font-bold">
                     Sohel • B.Tech CSE • Vignan Institute of Information Technology
                 </p>
-                <p className="text-gray-300 text-xs mt-2 uppercase tracking-widest">A journey of growth &copy; 2026</p>
+                <p className="text-gray-600 text-lg mt-4 uppercase tracking-widest font-medium">A journey of growth &copy; 2026</p>
             </footer>
+
+
         </main>
     );
 };

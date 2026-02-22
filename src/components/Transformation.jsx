@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const Transformation = ({ chapter, title, subtitle, description, images }) => {
     return (
-        <section className="py-40 relative bg-gray-50/80 overflow-hidden">
+        <section className="py-20 md:py-40 relative bg-gray-50/80 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-24">
-                    <span className="text-secondary font-accent font-bold uppercase tracking-[0.4em] text-xs mb-4 block">
+                <div className="text-center mb-12 md:mb-24">
+                    <span className="text-secondary font-accent font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs mb-4 block">
                         {chapter}
                     </span>
                     <motion.h2
@@ -14,11 +14,11 @@ const Transformation = ({ chapter, title, subtitle, description, images }) => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1 }}
-                        className="text-7xl md:text-9xl font-accent font-black text-gray-900 mb-8 tracking-tighter"
+                        className="text-5xl md:text-9xl font-accent font-black text-gray-900 mb-6 md:mb-8 tracking-tighter leading-[1.1]"
                     >
                         {title}
                     </motion.h2>
-                    <p className="text-2xl text-secondary font-light tracking-[0.3em] uppercase">
+                    <p className="text-lg md:text-2xl text-secondary font-light tracking-[0.2em] md:tracking-[0.3em] uppercase">
                         {subtitle}
                     </p>
                 </div>
@@ -29,9 +29,9 @@ const Transformation = ({ chapter, title, subtitle, description, images }) => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.5 }}
-                        className="rounded-[4rem] overflow-hidden shadow-2xl shadow-gray-300 border-[12px] border-white"
+                        className="rounded-3xl md:rounded-[4rem] overflow-hidden shadow-2xl shadow-gray-300 border-[6px] md:border-[12px] border-white"
                     >
-                        <img src={images[0]} alt="Current Status" className="w-full h-[750px] object-cover grayscale-[10%]" />
+                        <img src={images[0]} alt="Current Status" className="w-full h-[400px] md:h-[750px] object-cover grayscale-[10%]" />
                         <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent"></div>
                     </motion.div>
 
@@ -40,12 +40,12 @@ const Transformation = ({ chapter, title, subtitle, description, images }) => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.8, duration: 1 }}
-                        className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-white/90 backdrop-blur-2xl p-16 md:p-20 rounded-[4rem] border border-gray-100 text-center shadow-[0_40px_100px_rgba(0,0,0,0.08)]"
+                        className="relative md:absolute md:-bottom-20 md:left-1/2 md:-translate-x-1/2 w-full max-w-2xl bg-white/90 backdrop-blur-2xl p-10 md:p-20 mt-8 md:mt-0 rounded-3xl md:rounded-[4rem] border border-gray-100 text-center shadow-[0_40px_100px_rgba(0,0,0,0.08)]"
                     >
-                        <p className="text-4xl md:text-5xl text-gray-900 font-accent font-black italic mb-10 leading-[1.1] tracking-tight">
+                        <p className="text-2xl md:text-5xl text-gray-900 font-accent font-black italic mb-6 md:mb-10 leading-[1.2] md:leading-[1.1] tracking-tight">
                             “From confusion to clarity, <br /> I found my path.”
                         </p>
-                        <div className="text-gray-500 text-xl mb-12 font-light max-w-md mx-auto">
+                        <div className="text-gray-500 text-base md:text-xl mb-8 md:mb-12 font-light max-w-md mx-auto">
                             {description}
                         </div>
                         <motion.a
@@ -54,7 +54,7 @@ const Transformation = ({ chapter, title, subtitle, description, images }) => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 50px rgba(0, 210, 255, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-block bg-gray-900 text-white px-16 py-6 rounded-full font-bold text-xl transition-all tracking-wider uppercase"
+                            className="inline-block bg-gray-900 text-white px-10 md:px-16 py-4 md:py-6 rounded-full font-bold text-lg md:text-xl transition-all tracking-wider uppercase"
                         >
                             Let's Connect
                         </motion.a>
@@ -62,8 +62,9 @@ const Transformation = ({ chapter, title, subtitle, description, images }) => {
                 </div>
             </div>
 
-            <div className="h-64"></div>
+            <div className="h-20 md:h-64"></div>
         </section>
+
     );
 };
 
